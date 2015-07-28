@@ -12,12 +12,12 @@
 
 6. In the terminal require mail `composer require illuminate/mail` (should download version ~5.1)
 
->Note: this installs a few other dependencies like swiftmailer
+    >Note: this installs a few other dependencies like swiftmailer
 
 7. Update .env file to have appropriate username/password/etc for MAIL_DRIVER, MAIL_HOST, etc...
 
 8. Take a look at the '/' route where I am sending out a raw mail string to myself
 
->NOTE: I used the key route to generate a random string that I pasted into my app_key .env because Lumen does not have the key:generate artisan command, but this does not seem to be required.
+    >NOTE: I used the key route to generate a random string that I pasted into my app_key .env because Lumen does not have the key:generate artisan command, but this does not seem to be required.
 
 
