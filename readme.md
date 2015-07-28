@@ -1,21 +1,23 @@
-## Lumen PHP Framework
+## Lumen PHP Framework - Mailer App
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+1. install lumen `composer global require "laravel/lumen-installer=~1.0"`
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+2. Create new lumen service `lumen new mailerapp` (named mailerapp)
 
-## Official Documentation
+3. In bootstrap/app.php, uncomment line 81 `$app->register(App\Providers\AppServiceProvider::class);`
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+4. In bootstrap/app.php, uncomment line 22 `$app->withFacades();`
 
-## Security Vulnerabilities
+5. In bootstrap/app.php, uncomment line 5 `Dotenv::load(__DIR__.'/../');`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+6. In the terminal require mail `composer require illuminate/mail` (should download version ~5.1)
 
-### License
+>Note: this installs a few other dependencies like swiftmailer
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+7. Update .env file to have appropriate username/password/etc for MAIL_DRIVER, MAIL_HOST, etc...
+
+8. Take a look at the '/' route where I am sending out a raw mail string to myself
+
+>NOTE: I used the key route to generate a random string that I pasted into my app_key .env because Lumen does not have the key:generate artisan command, but this does not seem to be required.
+
+
