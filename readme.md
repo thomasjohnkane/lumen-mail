@@ -16,7 +16,9 @@
 
 7. Update .env file to have appropriate username/password/etc for MAIL_DRIVER, MAIL_HOST, etc...
 
-8. Take a look at the '/' route where I am sending out a raw mail string to myself
+8. Add `use Illuminate\Support\Facades\Mail;` at top of file where Mail will be sent from
+
+9. Take a look at the '/' route where I am sending out a raw mail string to myself
 
     >NOTE: I used the key route to generate a random string that I pasted into my app_key .env because Lumen does not have the key:generate artisan command, but this does not seem to be required.
 
